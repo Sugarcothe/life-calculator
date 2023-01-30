@@ -1,0 +1,108 @@
+/* Card styles */
+.card {
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #e9fd9f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Other styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+form .flex {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+input[type="date"] {
+  font-size: 18px;
+  padding: 10px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #0e7912;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
+}
+
+
+@media (min-width: 800px) {
+  .card {
+    width: 90%;
+    height: 80%;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8fee1;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+
+  label {
+    font-size: 40px;
+    margin-right: 10px;
+    padding: 10px 20px;
+  }
+
+  input[type="date"] {
+    font-size: 38px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 28px;
+    padding: 15px 60px;
+    background-color: #0e7912;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+  }
+
+  .result {
+    font-size: 30px;
+    font-family: "";
+    font-weight: 400;
+  }
+
+  small {
+    font-size: 20px;
+  }
+}

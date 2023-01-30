@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LIFE COUNT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>LIFE COUNT</h1>
+    <div class="card">
+      <form>
+        <label for="birthday">Enter your birthday</label> <br />
+        <br />
+        <input type="date" placeholder="Date" id="birthday" name="birthday" />
+
+        <br /><br /><br />
+        <button type="button" onclick="calculateAge()">Calculate</button>
+      </form>
+
+      <div class="result" id="result1"></div>
+      <br />
+      <div class="result" id="result2"></div>
+      <div class="result" id="result3"></div>
+      <div class="result" id="result4"></div>
+      <div class="result" id="result5"></div>
+      <div class="result" id="result6"></div>
+      <div class="result" id="result7"></div>
+      <br />
+      <div class="result" id="result0"></div>
+      <hr />
+      <div class="result" id="resultx"></div>
+
+      <hr />
+      <small
+        >author @<a target="_blank" href="https://twitter.com/sweetestshuga"
+          >Valentine</a
+        ></small
+      >
+      <br />
+      <small>we are all earthly passengers🤗</small>
+    </div>
+
+    <script>
+      function calculateAge() {
+        var birthday = new Date(document.getElementById("birthday").value);
+        var today = new Date();
+        var ageInMilliseconds = today - birthday;
+
+        var currentYear = today.getFullYear();
+
+        // set the birthday to the current year
+        birthday.setFullYear(currentYear);
+
+        // if the birthday has already passed this year
+        if (today > birthday) {
+          // set the birthday to next year
+          birthday.setFullYear(currentYear + 1);
+        }
+
+        // calculate the difference between today and the next birthday
+        var timeUntilBirthday = birthday - today;
+        var daysUntilBirthday = Math.ceil(
+          timeUntilBirthday / (1000 * 60 * 60 * 24)
+        );
+
+        var ageInSeconds = ageInMilliseconds / 1000;
+        var ageInMinutes = ageInSeconds / 60;
+        var ageInHours = ageInMinutes / 60;
+        var ageInDays = ageInHours / 24;
+        var ageInWeeks = ageInDays / 7;
+        var ageInMonths = ageInDays / 30.44;
+        var ageInYears = ageInMonths / 12;
+
+        document.getElementById(
+          "result0"
+        ).innerHTML = `You will be ${Math.floor(
+          ageInYears + 1
+        )} in  ${daysUntilBirthday} days.`;
+
+        document.getElementById(
+          "resultx"
+        ).innerHTML = `You will be ${Math.floor(
+          ageInYears + 8
+        )} By the time the next president leaves office, no go help your life and that of your kids 😹`;
+
+        document.getElementById("result1").innerHTML = `You are ${Math.floor(
+          ageInYears
+        )} Years`;
+        document.getElementById("result2").innerHTML = `${Math.floor(
+          ageInMonths % 12
+        )} Months`;
+        document.getElementById("result3").innerHTML = `${Math.floor(
+          ageInWeeks % 4
+        )} Weeks`;
+        document.getElementById("result4").innerHTML = `${Math.floor(
+          ageInDays % 7
+        )} Days`;
+        document.getElementById("result5").innerHTML = `${Math.floor(
+          ageInHours % 24
+        )} Hours`;
+        document.getElementById("result6").innerHTML = `${Math.floor(
+          ageInMinutes % 60
+        )} Minutes`;
+        document.getElementById("result7").innerHTML = `${Math.floor(
+          ageInSeconds % 60
+        )} Seconds`;
+        setInterval(calculateAge, 1000);
+      }
+    </script>
+  </body>
+</html>
